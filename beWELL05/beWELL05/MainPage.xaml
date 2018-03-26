@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:beWELL05"
+             x:Class="beWELL05.MainPage"
+             x:Name="Providers"
+             >
+    <StackLayout>
+        <Label x:Name="lblTitle" HorizontalOptions="CenterAndExpand" ></Label>
+        <Picker x:Name="CountryPicker" SelectedIndexChanged="OnCountryPickerChanged" Title="Select Country..." >
+            <Picker.Items>
+                <x:String>Egypt</x:String>
+                <x:String>France</x:String>
+                <x:String>India</x:String>
+                <x:String>Jordan</x:String>
+                <x:String>Kuwait</x:String>
+                <x:String>Lebanon</x:String>
+                <x:String>Morocco</x:String>
+                <x:String>Oman</x:String>
+                <x:String>Qatar</x:String>
+                <x:String>Russia</x:String>
+                <x:String>Spain</x:String>
+                <x:String>Sudan</x:String>
+                <x:String>Tunisia</x:String>
+                <x:String>Turkey</x:String>
+            </Picker.Items>
+        </Picker>
+        <Picker x:Name="CityPicker" SelectedIndexChanged="OnCityPickerChanged" Title="Select City..." ></Picker>
+        <SearchBar x:Name="txtSearch" Placeholder="Find Provider" TextChanged="OnSearchChanged"></SearchBar>
+        <ListView x:Name="lstProviders" ItemsSource="{Binding}" ItemTapped="OnProvderTapped" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell  Text="{Binding Name}" TextColor="Black"
+                                   Detail="{Binding City}" DetailColor="Blue"
+                                    >
+
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
